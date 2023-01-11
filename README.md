@@ -37,4 +37,18 @@ This file contains the code for the ordinary UCT algorithm.
 This file simply contains the get_move function for the predefined random player, which moves randomly. Provided by the instructor.
 
 ## Usage
-TBA
+
+### Single Game 
+To run two programs against each other, to play against a program, or to play against another human, cd to reversi-uct-project and put the following line of code into the terminal:
+
+```bash
+python3 supervisor.py prog1 prog2 timeout_limit verbose
+```
+
+prog1: the name of the program which will go first, and play as X. Example: to assign a human player to be X, use "players.human" as prog1.
+
+prog2: the name of the program which will go second, and play as O. Example: to assign a UCT (ordinary) player to be O, use "players.ordinary" as prog2.
+
+timeout_limit (optional): the time alloted to any player using some form of UCT to make their move. By default, this is 1 second.
+
+verbose (optional): determines whether or not to show the board before each move; 1 (True) to show the board, 0 (False) not to show the board. By default, this is True.
