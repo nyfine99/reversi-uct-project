@@ -58,3 +58,21 @@ Example: to test the ordinary UCT algorithm against the improved UCT algorithm, 
 ```bash
 python3 supervisor.py players.ordinary players.improved 2.0 1
 ```
+
+### Multiple Games
+To run two programs against each other for multiple games, cd to reversi-uct-project and put the following line of code into the terminal:
+
+```bash
+python3 test.py num_games prog1 prog2 timeout_limit verbose
+```
+
+This works as with the single game above, but with the following additions: 
+
+- num_games sets the number of games for which the programs will run against each other.
+- Between games, the system will print the total number of x wins thus far, as well as how many games have been played.
+
+Example: to test the ordinary UCT algorithm against the improved UCT algorithm, with ordinary moving first, for 25 games; not showing the board between moves and alloting each player 0,5 seconds to move, we would say:
+
+```bash
+python3 25 test.py players.ordinary players.improved 0.5 0
+```
