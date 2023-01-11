@@ -52,3 +52,9 @@ prog2: the name of the program which will go second, and play as O. Example: to 
 timeout_limit (optional): the time alloted to any player using some form of UCT to make their move. By default, this is 1 second.
 
 verbose (optional): determines whether or not to show the board before each move; 1 (True) to show the board, 0 (False) not to show the board. By default, this is True.
+
+Example: to test the ordinary UCT algorithm against the improved UCT algorithm, with ordinary moving first, showing the board between moves, and alloting each player 2 seconds to move, we would say:
+
+```bash
+python3 supervisor.py players.ordinary players.improved 2.0 1
+```
