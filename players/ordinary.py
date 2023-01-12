@@ -145,8 +145,6 @@ def UCT(board, curr_tile, tile_seen):
     valid_moves = getValidMoves(board, curr_tile)
     if valid_moves == []:
         # in this case, no one can move, and the game is done
-        # increment t value
-        tile_seen[curr_state][1] = tile_seen[curr_state][1] + 1.0
         # we treat X as max nodes and O as min nodes, so return 1 if X wins,
         # 0 if O wins
         scores = getScoreOfBoard(board)
@@ -154,16 +152,22 @@ def UCT(board, curr_tile, tile_seen):
             # X wins; adjust r appropriately and return r value
             tile_seen[curr_state][0] = (tile_seen[curr_state][0] * 
                 tile_seen[curr_state][1] + 1.0)/(tile_seen[curr_state][1] +1.0)
+            # increment t value
+            tile_seen[curr_state][1] = tile_seen[curr_state][1] + 1.0
             return 1.0
         elif scores["X"] == scores["O"]:
             # tie; adjust r appropriately and return r value
             tile_seen[curr_state][0] = (tile_seen[curr_state][0] * 
                 tile_seen[curr_state][1] + 0.5)/(tile_seen[curr_state][1] +1.0)
+            # increment t value
+            tile_seen[curr_state][1] = tile_seen[curr_state][1] + 1.0
             return 0.5
         else:
             # O wins; adjust r appropriately and return r value
             tile_seen[curr_state][0] = (tile_seen[curr_state][0] * 
                 tile_seen[curr_state][1])/(tile_seen[curr_state][1] +1.0)
+            # increment t value
+            tile_seen[curr_state][1] = tile_seen[curr_state][1] + 1.0
             return 0.0
     
     # if we have reached this point, there are valid moves to be made
