@@ -1,7 +1,7 @@
 # reversi-uct-project
 
 ## Introduction
-This a project I built in CMSC474, Computational Game Theory, at the University of Maryland. In this project, I implemented the UCT algorithm for a (slightly modified) version of reversi. The code for the game was provided by the instructor, and I built the UCT algorithm to play it. players/ordinary.py contains the UCT algorithm, while players/improved.py contains my improved version of the UCT algorithm, which was tested against the ordinary UCT algorithm under various constraints and consistently outperformed it (approximately 60% of the time, according to experiment data). The improved algorithm placed third in a competition with improved algorithms from other classmates; the class size was about 30 students.
+This a project I built in CMSC474, Computational Game Theory, at the University of Maryland. In this project, I implemented the UCT algorithm for [Reversi](https://www.mastersofgames.com/rules/reversi-othello-rules.htm). The code for the game was provided by the instructor, and I built the UCT algorithm to play it. players/ordinary.py contains the UCT algorithm, while players/improved.py contains my improved version of the UCT algorithm, which was tested against the ordinary UCT algorithm under various constraints and consistently outperformed it (approximately 60% of the time, according to experiment data). The improved algorithm placed third in a competition with improved algorithms from other classmates; the class size was about 30 students.
 
 ## The UCT algorithm
 At a high level, this algorithm works as follows: the algorithm takes as input the current state of the board, the player whose turn it is, all possible moves for that player, how many times it has simulated each of these moves, and how often each simulation results in a win. For any unsimulated move, the algorithm explores that move, applying itself recursively to the resulting board with the other player to move. Once each possible move has been simulated, the algorithm attempts to balance exploration with exploitation, calculating a "utility" value for each move it could simulate based on how strong the move seems and how many times it has been tried and simulating the move with the highest utility. The more times the move has resulted in a win for the current player, the higher its utility, and the less a move has been simulated, the higher the utility of simulating it again. When the alloted time to select a move runs out, the move with the highest win rate is selected, and returned by the get_move function to the game supervisor. 
@@ -18,10 +18,10 @@ Where:
 
 And the a which results in the highest Q(a) is selected.
 
-For more information, an explanation of this algorithm in the context of chess is provided here: https://www.chessprogramming.org/UCT#:~:text=UCT%20(Upper%20Confidence%20bounds%20applied,score%20than%20other%2C%20better%20moves.
+For more information, an explanation of this algorithm in the context of chess is provided [here](https://www.chessprogramming.org/UCT#:~:text=UCT%20(Upper%20Confidence%20bounds%20applied,score%20than%20other%2C%20better%20moves).
 
 ## Game Files
-The following files are used either for the reversi logic or for playing the reversi game. I will note which files were provided by the instructor. 
+The following files are used either for the Reversi logic or for playing the Reversi game. I will note which files were provided by the instructor. 
 
 ### reversi.py
 This file contains the game's logic, as well as functions to obtain the move for a predefined computer player (which isn't very good at the game) and to obtain the move for a human player. Provided by the instructor.
