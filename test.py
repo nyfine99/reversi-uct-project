@@ -134,9 +134,9 @@ def supervisor_test(prog1_name,prog2_name,TIMEOUT_LIMIT,verbose):
 if __name__=="__main__":
     TIMEOUT_LIMIT=1.0
     verbose=False
-    num_games=int(sys.argv[1])
-    prog1_name=sys.argv[2]
-    prog2_name=sys.argv[3]
+    prog1_name=sys.argv[1]
+    prog2_name=sys.argv[2]
+    num_games=int(sys.argv[3])
     if len(sys.argv)>4:
         TIMEOUT_LIMIT=float(sys.argv[4])
     if len(sys.argv)>5:
