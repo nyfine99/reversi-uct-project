@@ -94,3 +94,9 @@ Example: to test the ordinary UCT algorithm against the improved UCT algorithm, 
 ```bash
 python3 test.py players.ordinary players.improved 25 0.5 0
 ```
+
+To perform the example test in a way that the players lose memory of states from previous games, save the players you want to use outside of the players folder (in the same folder as test.py), then say:
+
+```bash
+python3 test.py ordinary improved 25 0.5 0
+```
