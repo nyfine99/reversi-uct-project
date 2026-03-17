@@ -18,7 +18,7 @@ Where:
 
 And the a which results in the highest Q(a) is selected.
 
-For more information, an explanation of this algorithm in the context of chess is provided [here](https://www.chessprogramming.org/UCT#:~:text=UCT%20(Upper%20Confidence%20bounds%20applied,score%20than%20other%2C%20better%20moves).
+For more information, an explanation of this algorithm in the context of chess is provided [here](https://www.chessprogramming.org/UCT#:~:text=UCT%20(Upper%20Confidence%20bounds%20applied).
 
 ## Game Files
 The following files are used either for the Reversi logic or for playing the Reversi game. I will note which files were provided by the instructor. 
